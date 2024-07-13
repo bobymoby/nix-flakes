@@ -2,7 +2,7 @@
 
 confFile:
 let
-  lib = inputs.system-flake-tools.lib;
+  lib = inputs.bobymoby-nix-flakes.lib;
   tools = lib.system-flake-tools { inherit inputs; };
   outputs = inputs.self.outputs;
 in
