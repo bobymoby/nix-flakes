@@ -2,12 +2,13 @@
 
 confFile:
 let
-  tools = import ./. { inherit inputs; };
+  lib = inputs.system-flake-tools.lib;
+  tools = lib.system-flake-tools { inherit inputs; };
   outputs = inputs.self.outputs;
 in
 inputs.home-manager.lib.homeManagerConfiguration {
   pkgs = import inputs.nixpkgs {
-    system = tools.systems.x86_64-linux;
+    system = lib.systems.x86_64-linux;
     config = {
       allowUnfree = true;
     };
