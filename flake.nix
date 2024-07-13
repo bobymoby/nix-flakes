@@ -1,8 +1,8 @@
 {
-  description = "Nix flake utilities";
+  description = "Nix flake utilities and templates";
 
   outputs = inputs: {
-    lib = import ./lib.nix;
-    templates = import ./templates.nix;
+    lib = import ./lib;
+    templates = import ./templates;
   };
 }
