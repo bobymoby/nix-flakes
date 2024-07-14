@@ -2,8 +2,7 @@
 
 confFile:
 let
-  lib = inputs.bobymoby-nix-flakes.lib;
-  tools = lib.system-flake-tools { inherit inputs; };
+  tools = import ./. { inherit inputs; };
   outputs = inputs.self.outputs;
 in
 inputs.home-manager.lib.homeManagerConfiguration {
