@@ -1,12 +1,8 @@
-{
-  buildInputsFunc,
-  shellHookFunc,
-  inputs,
-  ...
-}:
+devInputs@{ ... }:
+{ buildInputsFunc, shellHookFunc, ... }:
 let
-  nixpkgs = inputs.nixpkgs;
-  flake-utils = inputs.flake-utils;
+  nixpkgs = devInputs.nixpkgs;
+  flake-utils = devInputs.flake-utils;
 in
 flake-utils.lib.eachDefaultSystem (
   system:

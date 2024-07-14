@@ -5,7 +5,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = inputs: {
-    lib = import ./lib;
+    lib = import ./lib { inherit inputs; };
     templates = import ./templates;
   };
 }
