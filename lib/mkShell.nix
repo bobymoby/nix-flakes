@@ -1,10 +1,13 @@
-{ buildInputsFunc, shellHookFunc }:
 {
-  self,
-  nixpkgs,
-  flake-utils,
+  buildInputsFunc,
+  shellHookFunc,
+  inputs,
   ...
 }:
+let
+  nixpkgs = inputs.nixpkgs;
+  flake-utils = inputs.flake-utils;
+in
 flake-utils.lib.eachDefaultSystem (
   system:
   let
